@@ -63,8 +63,11 @@ router
   .post(verifyToken, validateProducts, handleInputErrors, addProductsToStore)
 
 router
-  .route('/product/:id')
-  .get(verifyToken, validateId, handleInputErrors, getProductById)
+  .route('/product/get/:id')
+  .get(validateId, handleInputErrors, getProductById)
+
+router
+  .route('/product/id/:id')
   .put(verifyToken, validateId, handleInputErrors, updateProductById)
   .delete(verifyToken, validateId, handleInputErrors, deleteProductById)
   .patch(verifyToken, validateId, handleInputErrors, updateProductStockById)

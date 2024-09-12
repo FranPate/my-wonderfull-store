@@ -30,6 +30,7 @@ export const protectWithJwt = (
   if (
     req.path == '/products/products' ||
     req.path == '/products/product/search/:title' ||
+    /^\/products\/product\/get\/\d+$/.test(req.path) ||
     req.path == '/auth/login' ||
     req.path == '/auth/signup' ||
     req.path.startsWith('/docs')

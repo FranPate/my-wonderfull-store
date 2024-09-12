@@ -29,7 +29,10 @@ export const addProduct = async (
 ): Promise<Product> => {
   return new Promise(async (resolve, reject) => {
     try {
+      console.log(product)
       let savedProduct = await Product.create(product)
+      console.log('savedProduct')
+      console.log(savedProduct)
       return resolve(savedProduct)
     } catch (error) {
       return reject(error)

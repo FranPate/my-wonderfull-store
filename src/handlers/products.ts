@@ -55,6 +55,7 @@ export const addProductToStore = async (
 ): Promise<Response> => {
   try {
     let savedProduct = await addProduct(req.body)
+    console.log(savedProduct)
     res.status(201).json({ data: savedProduct })
   } catch (error) {
     return res.status(500).json({ error })
@@ -67,6 +68,7 @@ export const addProductsToStore = async (
 ): Promise<Response> => {
   try {
     let products = req.body.products
+    console.log(products)
     let savedProducts = await addProducts(products)
     res.status(201).json({ data: savedProducts })
   } catch (error) {
